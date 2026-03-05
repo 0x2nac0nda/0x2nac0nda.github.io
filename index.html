@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdalla Abdelrhman | Offensive Security Consultant | OSWE OSCP</title>
+    <title>Abdalla Abdelrhman | Offensive Security Consultant</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Orbitron:wght@400;700;900&display=swap');
         
@@ -186,10 +186,10 @@
 
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
             margin: 40px 0;
-            max-width: 800px;
+            max-width: 900px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -211,10 +211,11 @@
         }
 
         .stat-number {
-            font-size: 2rem;
+            font-size: 1.2rem;
             font-weight: bold;
             color: var(--neon-green);
             display: block;
+            line-height: 1.4;
         }
 
         .stat-label {
@@ -222,6 +223,7 @@
             color: #888;
             text-transform: uppercase;
             letter-spacing: 1px;
+            margin-top: 5px;
         }
 
         .badges {
@@ -657,7 +659,7 @@
         }
 
         .publications-section {
-            margin-top: 60px;
+            margin-top: 0;
         }
 
         .publications-title {
@@ -682,6 +684,9 @@
             transition: all 0.3s;
             position: relative;
             overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            display: block;
         }
 
         .publication-card::before {
@@ -724,6 +729,7 @@
             display: flex;
             gap: 8px;
             flex-wrap: wrap;
+            margin-bottom: 15px;
         }
 
         .publication-tag {
@@ -733,6 +739,23 @@
             border-radius: 4px;
             font-size: 0.75rem;
             border: 1px solid rgba(189, 0, 255, 0.3);
+        }
+
+        .publication-link {
+            color: var(--accent-purple);
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .publication-link::after {
+            content: '→';
+            transition: transform 0.3s;
+        }
+
+        .publication-card:hover .publication-link::after {
+            transform: translateX(5px);
         }
 
         .contact {
@@ -801,26 +824,48 @@
             margin-bottom: 20px;
         }
 
-        .footer-text {
-            color: #666;
-            font-size: 0.9rem;
-        }
-
         .footer-links {
             display: flex;
             justify-content: center;
             gap: 30px;
             margin: 20px 0;
+            flex-wrap: wrap;
         }
 
         .footer-links a {
             color: #888;
             text-decoration: none;
             transition: color 0.3s;
+            padding: 10px 20px;
+            border: 1px solid #333;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            min-width: 120px;
         }
 
         .footer-links a:hover {
             color: var(--neon-green);
+            border-color: var(--neon-green);
+            background: rgba(0, 255, 65, 0.05);
+        }
+
+        .footer-link-name {
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .footer-link-url {
+            font-size: 0.75rem;
+            color: #666;
+        }
+
+        .footer-text {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 20px;
         }
 
         @media (max-width: 768px) {
@@ -845,6 +890,13 @@
             .publications-grid {
                 grid-template-columns: 1fr;
             }
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-links {
+                flex-direction: column;
+                align-items: center;
+            }
         }
 
         .fade-in {
@@ -858,6 +910,7 @@
             transform: translateY(0);
         }
     </style>
+<base target="_blank">
 </head>
 <body>
 
@@ -883,7 +936,7 @@
             <div class="glitch-wrapper">
                 <h1 class="glitch">ABDALLA ABDELRHMAN</h1>
             </div>
-            <p class="hero-subtitle">Offensive Security Consultant | OSWE | OSCP</p>
+            <p class="hero-subtitle">Offensive Security Consultant</p>
             <p class="hero-tagline">
                 <span class="typing-text" id="typing"></span><span class="cursor">|</span>
             </p>
@@ -894,26 +947,20 @@
                     <span class="stat-label">Years Experience</span>
                 </div>
                 <div class="stat-card">
-                    <span class="stat-number">OSWE</span>
-                    <span class="stat-label">Certified</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number">OSCP</span>
-                    <span class="stat-label">Certified</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number">CRTP</span>
-                    <span class="stat-label">Trained</span>
+                    <span class="stat-number">OSWE | ISO 27001 LI | eWPTX | eMAPT | 5x HTB Prolabs Certified</span>
+                    <span class="stat-label">Certifications</span>
                 </div>
             </div>
 
             <div class="badges">
                 <span class="badge">Web Pentesting</span>
                 <span class="badge">Mobile Security</span>
-                <span class="badge">Active Directory</span>
+                <span class="badge">API Penetration Testing</span>
+                <span class="badge">Infrastructure & AD Pentesting</span>
+                <span class="badge">Source Code Review</span>
                 <span class="badge">Bug Bounty</span>
                 <span class="badge">CTF Player</span>
-                <span class="badge">Source Code Review</span>
+                <span class="badge">Writer on Medium</span>
             </div>
         </div>
     </section>
@@ -967,7 +1014,7 @@
                     <span class="command">status</span>
                 </div>
                 <div class="output">
-                    <span class="success">[ACTIVE]</span> Bug Bounty Hunter @ HackerOne | CTF Player | Published Security Researcher
+                    <span class="success">[ACTIVE]</span> CTF Player @ Hack The Box | Bug Bounty Hunter | Writer on Medium | Security Researcher
                 </div>
             </div>
         </div>
@@ -1009,7 +1056,7 @@
                 <div class="service-tags">
                     <span class="service-tag">AD Attacks</span>
                     <span class="service-tag">BloodHound</span>
-                    <span class="service-tag">CRTP</span>
+                    <span class="service-tag">C2</span>
                 </div>
             </div>
 
@@ -1034,17 +1081,6 @@
                     <span class="service-tag">Hardening</span>
                 </div>
             </div>
-
-            <div class="service-card">
-                <span class="service-icon">🎯</span>
-                <h3>Bug Bounty Consulting</h3>
-                <p>Leveraging real-world bug hunting experience to help organizations establish effective bug bounty programs and validate security findings from external researchers.</p>
-                <div class="service-tags">
-                    <span class="service-tag">Triage</span>
-                    <span class="service-tag">Validation</span>
-                    <span class="service-tag">HackerOne</span>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -1058,7 +1094,7 @@
             <div class="timeline-item">
                 <div class="timeline-date">AUG 2024 - PRESENT</div>
                 <div class="timeline-title">Cyber Security Consultant</div>
-                <div class="timeline-company">Ministry of Municipal and Rural Affairs | Riyadh, Saudi Arabia</div>
+                <div class="timeline-company">Confidential Careers | Riyadh, Saudi Arabia</div>
                 <div class="timeline-desc">
                     <ul>
                         <li>Delivering end-to-end penetration testing across web, API, mobile (iOS & Android), network, and Active Directory environments</li>
@@ -1124,13 +1160,6 @@
             </div>
 
             <div class="cert-card">
-                <div class="cert-icon">🎯</div>
-                <div class="cert-name">OSCP</div>
-                <div class="cert-issuer">Offensive Security</div>
-                <span class="cert-status active">Certified - Penetration Testing</span>
-            </div>
-
-            <div class="cert-card">
                 <div class="cert-icon">📱</div>
                 <div class="cert-name">eMAPT</div>
                 <div class="cert-issuer">eLearnSecurity</div>
@@ -1164,6 +1193,13 @@
                 <div class="cert-issuer">Certified Network Security Specialist</div>
                 <span class="cert-status active">Certified</span>
             </div>
+
+            <div class="cert-card">
+                <div class="cert-icon">🖥️</div>
+                <div class="cert-name">HTB Pro Labs</div>
+                <div class="cert-issuer">Hack The Box</div>
+                <span class="cert-status active">Dante, Zephyr, Rastalabs, Offshore, Cybernetics</span>
+            </div>
         </div>
 
         <div class="training-section">
@@ -1180,24 +1216,18 @@
                     <div class="training-name">PEN-200 (PWK)</div>
                     <div class="training-provider">Offensive Security - OSCP Preparation</div>
                 </div>
-
-                <div class="training-card">
-                    <div class="training-icon">🎓</div>
-                    <div class="training-name">HTB Pro Labs</div>
-                    <div class="training-provider">Dante, Zephyr, Rastalabs, Offshore, Cybernetics</div>
-                </div>
             </div>
         </div>
     </section>
 
     <section id="publications" class="publications-section">
         <div class="section-header">
-            <h2 class="section-title">Research_&_ Publications</h2>
-            <p class="section-subtitle">Security guides and technical writeups</p>
+            <h2 class="section-title">Research_&_Publications</h2>
+            <p class="section-subtitle">Security guides, tools and technical writeups</p>
         </div>
 
         <div class="publications-grid">
-            <div class="publication-card">
+            <a href="https://github.com/abdallaabdalrhman/Source-Code-Review-Regex-Guide/blob/main/Source_Code_Review_and_Regex_Guide.pdf" target="_blank" class="publication-card">
                 <span class="publication-date">Published: February 01, 2026</span>
                 <h3>Source Code Review & Regex Guide</h3>
                 <p>A comprehensive guide for security-focused source code reviews and regex-based vulnerability detection. Covers manual review techniques, automated tools integration, and pattern matching for identifying security flaws across multiple languages.</p>
@@ -1207,9 +1237,10 @@
                     <span class="publication-tag">Code Review</span>
                     <span class="publication-tag">Guide</span>
                 </div>
-            </div>
+                <span class="publication-link">View Publication →</span>
+            </a>
 
-            <div class="publication-card">
+            <a href="https://github.com/abdallaabdalrhman/OSWE-Preparation-Tudo" target="_blank" class="publication-card">
                 <span class="publication-date">Published: April 10, 2024</span>
                 <h3>Preparation for the OSWE/AWAE Exam</h3>
                 <p>Technical preparation guide featuring three Python scripts targeting critical vulnerabilities: deserialization, file upload, and SSTI (Server-Side Template Injection). Designed to aid security professionals in preparing for the OSWE certification exam with practical exploit development techniques.</p>
@@ -1219,7 +1250,21 @@
                     <span class="publication-tag">Python</span>
                     <span class="publication-tag">Exploit Dev</span>
                 </div>
-            </div>
+                <span class="publication-link">View Publication →</span>
+            </a>
+
+            <a href="https://github.com/abdallaabdalrhman/apk-security-analyzer" target="_blank" class="publication-card">
+                <span class="publication-date">Published: November 19, 2025</span>
+                <h3>APK Security Analyzer</h3>
+                <p>Advanced command-line tool for comprehensive security analysis of Android APK files with detailed JSON reporting. Automates static analysis, permission analysis, and vulnerability detection for mobile applications.</p>
+                <div class="publication-tags">
+                    <span class="publication-tag">Android</span>
+                    <span class="publication-tag">Python</span>
+                    <span class="publication-tag">Automation</span>
+                    <span class="publication-tag">Tool</span>
+                </div>
+                <span class="publication-link">View Tool →</span>
+            </a>
         </div>
     </section>
 
@@ -1323,11 +1368,20 @@
         <div class="footer-content">
             <div class="footer-logo">0x2nac0nda</div>
             <div class="footer-links">
-                <a href="https://medium.com/@0x2nac0nda" target="_blank">Medium</a>
-                <a href="https://hackerone.com/0x2nac0nda" target="_blank">HackerOne</a>
-                <a href="https://app.hackthebox.com/profile/0x2nac0nda" target="_blank">Hack The Box</a>
+                <a href="https://www.linkedin.com/in/0x2nac0nda/" target="_blank">
+                    <span class="footer-link-name">LinkedIn</span>
+                    <span class="footer-link-url">linkedin.com/in/0x2nac0nda</span>
+                </a>
+                <a href="https://x.com/0x2nac0nda" target="_blank">
+                    <span class="footer-link-name">X</span>
+                    <span class="footer-link-url">x.com/0x2nac0nda</span>
+                </a>
+                <a href="https://github.com/abdallaabdalrhman" target="_blank">
+                    <span class="footer-link-name">GitHub</span>
+                    <span class="footer-link-url">github.com/abdallaabdalrhman</span>
+                </a>
             </div>
-            <p class="footer-text">© 2024 Abdalla Abdelrhman. All rights reserved. | Securing the digital frontier.</p>
+            <p class="footer-text">© 2026 Abdalla Abdelrhman. All rights reserved. | Securing the digital frontier.</p>
         </div>
     </footer>
 
