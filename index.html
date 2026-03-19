@@ -1223,10 +1223,10 @@
         </div>
 
         <div class="contact-grid">
-            <a href="/cdn-cgi/l/email-protection#1d7c7f797c71717c7c7f797c716f75707c732b2f245d7a707c7471337e7270" class="contact-card">
+            <a href="mailto:abdallaabdalrhman629@gmail.com" class="contact-card">
                 <span class="contact-icon">📧</span>
                 <span class="contact-label">Email</span>
-                <span class="contact-value"><span class="__cf_email__" data-cfemail="60010204010c0c01010204010c12080d010e56525920070d01090c4e030f0d">[email&#160;protected]</span></span>
+                <span class="contact-value">abdallaabdalrhman629@gmail.com</span>
             </a>
 
             <a href="https://linkedin.com/in/0x2nac0nda" target="_blank" class="contact-card">
@@ -1253,7 +1253,7 @@
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         const canvas = document.getElementById('matrix-canvas');
         const ctx = canvas.getContext('2d');
 
@@ -1346,3 +1346,12 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
