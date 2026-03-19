@@ -44,16 +44,9 @@
             opacity: 0.15;
         }
 
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-        ::-webkit-scrollbar-track {
-            background: var(--darker-bg);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: var(--neon-green);
-            border-radius: 5px;
-        }
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: var(--darker-bg); }
+        ::-webkit-scrollbar-thumb { background: var(--neon-green); border-radius: 5px; }
 
         nav {
             position: fixed;
@@ -97,9 +90,7 @@
             font-size: 0.9rem;
         }
 
-        .nav-links a:hover {
-            color: var(--neon-green);
-        }
+        .nav-links a:hover { color: var(--neon-green); }
 
         .nav-links a::after {
             content: '';
@@ -112,9 +103,7 @@
             transition: width 0.3s;
         }
 
-        .nav-links a:hover::after {
-            width: 100%;
-        }
+        .nav-links a:hover::after { width: 100%; }
 
         .hero {
             min-height: 100vh;
@@ -165,6 +154,62 @@
             font-family: 'Orbitron', sans-serif;
         }
 
+        /* NEW: Service tagline under subtitle */
+        .hero-service-tagline {
+            font-size: 1rem;
+            color: #aaa;
+            margin-bottom: 25px;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+            border-left: 3px solid var(--neon-green);
+            padding-left: 16px;
+            text-align: left;
+        }
+
+        /* NEW: CTA Button */
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, rgba(0,255,65,0.15), rgba(0,212,255,0.1));
+            border: 2px solid var(--neon-green);
+            color: var(--neon-green);
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            padding: 14px 30px;
+            border-radius: 6px;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 30px;
+            cursor: pointer;
+        }
+
+        .cta-btn::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0,255,65,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-btn:hover::before { left: 100%; }
+
+        .cta-btn:hover {
+            background: rgba(0,255,65,0.2);
+            box-shadow: 0 0 25px rgba(0,255,65,0.4), 0 0 60px rgba(0,255,65,0.15);
+            transform: translateY(-2px);
+            color: #fff;
+        }
+
+        .cta-btn-icon { font-size: 1.2rem; }
+
         .hero-tagline {
             font-size: 1.1rem;
             color: #888;
@@ -180,9 +225,7 @@
             animation: blink 0.75s step-end infinite;
         }
 
-        @keyframes blink {
-            50% { border-color: transparent; }
-        }
+        @keyframes blink { 50% { border-color: transparent; } }
 
         .stats-grid {
             display: grid;
@@ -246,10 +289,7 @@
             gap: 8px;
         }
 
-        .badge::before {
-            content: '▸';
-            color: var(--cyber-blue);
-        }
+        .badge::before { content: '▸'; color: var(--cyber-blue); }
 
         section {
             padding: 100px 20px;
@@ -283,10 +323,7 @@
             box-shadow: 0 0 10px var(--neon-green);
         }
 
-        .section-subtitle {
-            color: #666;
-            font-size: 1rem;
-        }
+        .section-subtitle { color: #666; font-size: 1rem; }
 
         .terminal {
             background: var(--terminal-bg);
@@ -305,54 +342,20 @@
             border-bottom: 1px solid #333;
         }
 
-        .terminal-btn {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-        }
-
+        .terminal-btn { width: 12px; height: 12px; border-radius: 50%; }
         .terminal-btn.red { background: #ff5f56; }
         .terminal-btn.yellow { background: #ffbd2e; }
         .terminal-btn.green { background: #27c93f; }
 
-        .terminal-title {
-            margin-left: 10px;
-            color: #666;
-            font-size: 0.85rem;
-        }
+        .terminal-title { margin-left: 10px; color: #666; font-size: 0.85rem; }
 
-        .terminal-body {
-            padding: 30px;
-            font-size: 0.95rem;
-            line-height: 1.8;
-        }
-
-        .terminal-line {
-            margin-bottom: 10px;
-        }
-
-        .prompt {
-            color: var(--neon-green);
-        }
-
-        .command {
-            color: #fff;
-        }
-
-        .output {
-            color: #aaa;
-            margin-left: 20px;
-            margin-bottom: 15px;
-        }
-
-        .highlight {
-            color: var(--cyber-blue);
-            font-weight: bold;
-        }
-
-        .success {
-            color: var(--neon-green);
-        }
+        .terminal-body { padding: 30px; font-size: 0.95rem; line-height: 1.8; }
+        .terminal-line { margin-bottom: 10px; }
+        .prompt { color: var(--neon-green); }
+        .command { color: #fff; }
+        .output { color: #aaa; margin-left: 20px; margin-bottom: 15px; }
+        .highlight { color: var(--cyber-blue); font-weight: bold; }
+        .success { color: var(--neon-green); }
 
         .services-grid {
             display: grid;
@@ -373,17 +376,13 @@
         .service-card::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
             background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.1), transparent);
             transition: left 0.5s;
         }
 
-        .service-card:hover::before {
-            left: 100%;
-        }
+        .service-card:hover::before { left: 100%; }
 
         .service-card:hover {
             border-color: var(--neon-green);
@@ -391,11 +390,7 @@
             box-shadow: 0 10px 30px rgba(0, 255, 65, 0.1);
         }
 
-        .service-icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            display: block;
-        }
+        .service-icon { font-size: 2.5rem; margin-bottom: 15px; display: block; }
 
         .service-card h3 {
             color: var(--neon-green);
@@ -404,18 +399,9 @@
             font-family: 'Orbitron', sans-serif;
         }
 
-        .service-card p {
-            color: #888;
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
+        .service-card p { color: #888; font-size: 0.9rem; line-height: 1.6; }
 
-        .service-tags {
-            display: flex;
-            gap: 8px;
-            margin-top: 15px;
-            flex-wrap: wrap;
-        }
+        .service-tags { display: flex; gap: 8px; margin-top: 15px; flex-wrap: wrap; }
 
         .service-tag {
             background: rgba(0, 255, 65, 0.1);
@@ -426,6 +412,76 @@
             border: 1px solid rgba(0, 255, 65, 0.3);
         }
 
+        /* NEW: Industries Section */
+        .industries-section {
+            margin-top: 70px;
+        }
+
+        .industries-title {
+            text-align: center;
+            color: var(--cyber-blue);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 35px;
+            position: relative;
+        }
+
+        .industries-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 2px;
+            background: var(--cyber-blue);
+            margin: 12px auto 0;
+            box-shadow: 0 0 8px var(--cyber-blue);
+        }
+
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 16px;
+        }
+
+        .industry-card {
+            background: rgba(0, 212, 255, 0.04);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 10px;
+            padding: 22px 15px;
+            text-align: center;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .industry-card::before {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 100%; height: 3px;
+            background: var(--cyber-blue);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s;
+        }
+
+        .industry-card:hover::before { transform: scaleX(1); }
+
+        .industry-card:hover {
+            border-color: var(--cyber-blue);
+            background: rgba(0, 212, 255, 0.08);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.15);
+        }
+
+        .industry-icon { font-size: 2rem; margin-bottom: 10px; display: block; }
+
+        .industry-name {
+            color: #ddd;
+            font-size: 0.85rem;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
         .timeline {
             position: relative;
             padding-left: 40px;
@@ -434,8 +490,7 @@
         .timeline::before {
             content: '';
             position: absolute;
-            left: 0;
-            top: 0;
+            left: 0; top: 0;
             height: 100%;
             width: 2px;
             background: linear-gradient(to bottom, var(--neon-green), var(--cyber-blue));
@@ -459,62 +514,21 @@
         .timeline-item::before {
             content: '◆';
             position: absolute;
-            left: -48px;
-            top: 30px;
+            left: -48px; top: 30px;
             color: var(--neon-green);
             font-size: 1.2rem;
             text-shadow: 0 0 10px var(--neon-green);
         }
 
-        .timeline-date {
-            color: var(--cyber-blue);
-            font-size: 0.85rem;
-            margin-bottom: 5px;
-            font-family: 'Orbitron', sans-serif;
-        }
+        .timeline-date { color: var(--cyber-blue); font-size: 0.85rem; margin-bottom: 5px; font-family: 'Orbitron', sans-serif; }
+        .timeline-title { color: #fff; font-size: 1.3rem; margin-bottom: 5px; font-family: 'Orbitron', sans-serif; }
+        .timeline-company { color: var(--neon-green); font-size: 0.9rem; margin-bottom: 15px; }
+        .timeline-desc { color: #888; font-size: 0.9rem; line-height: 1.6; }
+        .timeline-desc ul { list-style: none; padding-left: 0; }
+        .timeline-desc li { padding-left: 20px; position: relative; margin-bottom: 8px; }
+        .timeline-desc li::before { content: '▸'; position: absolute; left: 0; color: var(--neon-green); }
 
-        .timeline-title {
-            color: #fff;
-            font-size: 1.3rem;
-            margin-bottom: 5px;
-            font-family: 'Orbitron', sans-serif;
-        }
-
-        .timeline-company {
-            color: var(--neon-green);
-            font-size: 0.9rem;
-            margin-bottom: 15px;
-        }
-
-        .timeline-desc {
-            color: #888;
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
-
-        .timeline-desc ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .timeline-desc li {
-            padding-left: 20px;
-            position: relative;
-            margin-bottom: 8px;
-        }
-
-        .timeline-desc li::before {
-            content: '▸';
-            position: absolute;
-            left: 0;
-            color: var(--neon-green);
-        }
-
-        .certs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
+        .certs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
 
         .cert-card {
             background: linear-gradient(135deg, rgba(0, 255, 65, 0.05), rgba(0, 212, 255, 0.05));
@@ -527,27 +541,11 @@
             overflow: hidden;
         }
 
-        .cert-card:hover {
-            border-color: var(--neon-green);
-            transform: scale(1.02);
-        }
+        .cert-card:hover { border-color: var(--neon-green); transform: scale(1.02); }
 
-        .cert-icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-        }
-
-        .cert-name {
-            color: #fff;
-            font-weight: bold;
-            margin-bottom: 5px;
-            font-size: 1.1rem;
-        }
-
-        .cert-issuer {
-            color: var(--neon-green);
-            font-size: 0.85rem;
-        }
+        .cert-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .cert-name { color: #fff; font-weight: bold; margin-bottom: 5px; font-size: 1.1rem; }
+        .cert-issuer { color: var(--neon-green); font-size: 0.85rem; }
 
         .cert-status {
             display: inline-block;
@@ -564,9 +562,7 @@
             border-color: var(--neon-green);
         }
 
-        .training-section {
-            margin-top: 60px;
-        }
+        .training-section { margin-top: 60px; }
 
         .training-title {
             text-align: center;
@@ -576,11 +572,7 @@
             margin-bottom: 30px;
         }
 
-        .training-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
+        .training-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
 
         .training-card {
             background: rgba(255, 149, 0, 0.05);
@@ -591,32 +583,13 @@
             transition: all 0.3s;
         }
 
-        .training-card:hover {
-            border-color: var(--accent-orange);
-            transform: translateY(-3px);
-        }
+        .training-card:hover { border-color: var(--accent-orange); transform: translateY(-3px); }
 
-        .training-icon {
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
+        .training-icon { font-size: 2rem; margin-bottom: 10px; }
+        .training-name { color: #fff; font-weight: bold; margin-bottom: 5px; }
+        .training-provider { color: var(--accent-orange); font-size: 0.85rem; }
 
-        .training-name {
-            color: #fff;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        .training-provider {
-            color: var(--accent-orange);
-            font-size: 0.85rem;
-        }
-
-        .achievements-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
+        .achievements-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
 
         .achievement-card {
             background: rgba(255, 0, 64, 0.05);
@@ -629,38 +602,14 @@
             transition: all 0.3s;
         }
 
-        .achievement-card:hover {
-            background: rgba(255, 0, 64, 0.1);
-            transform: translateX(10px);
-        }
+        .achievement-card:hover { background: rgba(255, 0, 64, 0.1); transform: translateX(10px); }
 
-        .achievement-icon {
-            font-size: 2rem;
-            color: var(--accent-red);
-        }
+        .achievement-icon { font-size: 2rem; color: var(--accent-red); }
+        .achievement-content h3 { color: #fff; margin-bottom: 5px; font-size: 1.1rem; }
+        .achievement-content p { color: #888; font-size: 0.9rem; line-height: 1.5; }
+        .achievement-date { color: var(--accent-red); font-size: 0.8rem; margin-top: 5px; display: block; }
 
-        .achievement-content h3 {
-            color: #fff;
-            margin-bottom: 5px;
-            font-size: 1.1rem;
-        }
-
-        .achievement-content p {
-            color: #888;
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
-
-        .achievement-date {
-            color: var(--accent-red);
-            font-size: 0.8rem;
-            margin-top: 5px;
-            display: block;
-        }
-
-        .publications-section {
-            margin-top: 0;
-        }
+        .publications-section { margin-top: 0; }
 
         .publications-title {
             text-align: center;
@@ -670,11 +619,7 @@
             margin-bottom: 30px;
         }
 
-        .publications-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 25px;
-        }
+        .publications-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 25px; }
 
         .publication-card {
             background: rgba(189, 0, 255, 0.05);
@@ -692,10 +637,8 @@
         .publication-card::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
+            top: 0; left: 0;
+            width: 4px; height: 100%;
             background: var(--accent-purple);
         }
 
@@ -705,32 +648,11 @@
             box-shadow: 0 5px 20px rgba(189, 0, 255, 0.2);
         }
 
-        .publication-date {
-            color: var(--accent-purple);
-            font-size: 0.8rem;
-            margin-bottom: 10px;
-            display: block;
-        }
+        .publication-date { color: var(--accent-purple); font-size: 0.8rem; margin-bottom: 10px; display: block; }
+        .publication-card h3 { color: #fff; margin-bottom: 10px; font-size: 1.2rem; }
+        .publication-card p { color: #888; font-size: 0.9rem; line-height: 1.6; margin-bottom: 15px; }
 
-        .publication-card h3 {
-            color: #fff;
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-        }
-
-        .publication-card p {
-            color: #888;
-            font-size: 0.9rem;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-
-        .publication-tags {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-            margin-bottom: 15px;
-        }
+        .publication-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 15px; }
 
         .publication-tag {
             background: rgba(189, 0, 255, 0.1);
@@ -749,14 +671,8 @@
             gap: 5px;
         }
 
-        .publication-link::after {
-            content: '→';
-            transition: transform 0.3s;
-        }
-
-        .publication-card:hover .publication-link::after {
-            transform: translateX(5px);
-        }
+        .publication-link::after { content: '→'; transition: transform 0.3s; }
+        .publication-card:hover .publication-link::after { transform: translateX(5px); }
 
         .contact {
             background: radial-gradient(circle at center, rgba(0, 255, 65, 0.05) 0%, transparent 70%);
@@ -791,19 +707,9 @@
             box-shadow: 0 10px 30px rgba(0, 255, 65, 0.2);
         }
 
-        .contact-icon {
-            font-size: 2rem;
-        }
-
-        .contact-label {
-            font-size: 1.1rem;
-            font-weight: bold;
-        }
-
-        .contact-value {
-            font-size: 0.85rem;
-            color: #888;
-        }
+        .contact-icon { font-size: 2rem; }
+        .contact-label { font-size: 1.1rem; font-weight: bold; }
+        .contact-value { font-size: 0.85rem; color: #888; }
 
         footer {
             background: var(--darker-bg);
@@ -812,10 +718,7 @@
             text-align: center;
         }
 
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+        .footer-content { max-width: 1200px; margin: 0 auto; }
 
         .footer-logo {
             font-family: 'Orbitron', sans-serif;
@@ -852,51 +755,39 @@
             background: rgba(0, 255, 65, 0.05);
         }
 
-        .footer-link-name {
-            font-weight: bold;
-            color: #fff;
+        .footer-link-name { font-weight: bold; color: #fff; }
+        .footer-link-url { font-size: 0.75rem; color: #666; }
+
+        .footer-text { color: #666; font-size: 0.9rem; margin-top: 20px; }
+
+        .footer-divider {
+            border: none;
+            border-top: 1px solid #1e1e1e;
+            margin: 20px 0;
         }
 
-        .footer-link-url {
-            font-size: 0.75rem;
-            color: #666;
+        .footer-copyright {
+            color: #555;
+            font-size: 0.85rem;
+            margin-top: 10px;
+            font-family: 'Fira Code', monospace;
         }
 
-        .footer-text {
-            color: #666;
-            font-size: 0.9rem;
-            margin-top: 20px;
+        .footer-copyright span {
+            color: var(--neon-green);
         }
 
         @media (max-width: 768px) {
-            .glitch {
-                font-size: 2.5rem;
-            }
-            .nav-links {
-                display: none;
-            }
-            .hero-subtitle {
-                font-size: 1.2rem;
-            }
-            section {
-                padding: 60px 20px;
-            }
-            .timeline {
-                padding-left: 30px;
-            }
-            .timeline-item::before {
-                left: -38px;
-            }
-            .publications-grid {
-                grid-template-columns: 1fr;
-            }
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-            .footer-links {
-                flex-direction: column;
-                align-items: center;
-            }
+            .glitch { font-size: 2.5rem; }
+            .nav-links { display: none; }
+            .hero-subtitle { font-size: 1.2rem; }
+            section { padding: 60px 20px; }
+            .timeline { padding-left: 30px; }
+            .timeline-item::before { left: -38px; }
+            .publications-grid { grid-template-columns: 1fr; }
+            .stats-grid { grid-template-columns: 1fr; }
+            .footer-links { flex-direction: column; align-items: center; }
+            .industries-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
         .fade-in {
@@ -925,7 +816,6 @@
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#certs">Credentials</a></li>
                 <li><a href="#publications">Publications</a></li>
-                <li><a href="#achievements">Achievements</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -937,6 +827,19 @@
                 <h1 class="glitch">ABDALLA ABDELRHMAN</h1>
             </div>
             <p class="hero-subtitle">Offensive Security Consultant</p>
+
+            <!-- NEW: Service description tagline -->
+            <p class="hero-service-tagline">
+                Penetration Testing &amp; Security Consulting Services<br>
+                <span style="color:#777; font-size:0.9rem;">I help organizations identify and mitigate real-world security risks across their digital assets.</span>
+            </p>
+
+            <!-- NEW: CTA Button -->
+            <a href="https://forms.gle/HDte8jy9JHqP256w7" target="_blank" class="cta-btn">
+                <span class="cta-btn-icon">🔐</span>
+                Request Free Initial Pentest
+            </a>
+
             <p class="hero-tagline">
                 <span class="typing-text" id="typing"></span><span class="cursor">|</span>
             </p>
@@ -952,16 +855,7 @@
                 </div>
             </div>
 
-            <div class="badges">
-                <span class="badge">Web Pentesting</span>
-                <span class="badge">Mobile Security</span>
-                <span class="badge">API Penetration Testing</span>
-                <span class="badge">Infrastructure & AD Pentesting</span>
-                <span class="badge">Source Code Review</span>
-                <span class="badge">Bug Bounty Hunter</span>
-                <span class="badge">CTF Player</span>
-                <span class="badge">Writer on Medium</span>
-            </div>
+
         </div>
     </section>
 
@@ -981,7 +875,7 @@
             <div class="terminal-body">
                 <div class="terminal-line">
                     <span class="prompt">root@0x2nac0nda:~$</span>
-                    <span class="command">whoami</span>
+                    <span class="command"> whoami</span>
                 </div>
                 <div class="output">
                     Cybersecurity Consultant specializing in offensive security, vulnerability assessment, and penetration testing (VAPT).
@@ -989,19 +883,21 @@
                 
                 <div class="terminal-line">
                     <span class="prompt">root@0x2nac0nda:~$</span>
-                    <span class="command">cat expertise.txt</span>
+                    <span class="command"> cat expertise.txt</span>
                 </div>
                 <div class="output">
                     • <span class="highlight">Web Applications</span>: OWASP Top 10, API Security, Thick Clients<br>
                     • <span class="highlight">Mobile Security</span>: Android & iOS Pentesting<br>
                     • <span class="highlight">Infrastructure</span>: AD Attacks, Internal/External Networks<br>
                     • <span class="highlight">Code Review</span>: PHP, Java, Python, Node.js (Manual + Automated)<br>
+                    • <span class="highlight">Cloud Pentesting</span>: Fortify your cloud environments by uncovering misconfigurations and insecure practices.<br>
+                    • <span class="highlight">AI / LLM Pentesting</span>: Check your AI / LLM applications for exposures and emerging threat vectors.<br>
                     • <span class="highlight">Standards</span>: NCA ECC, SAMA CSF, PTES, ISO 27001
                 </div>
 
                 <div class="terminal-line">
                     <span class="prompt">root@0x2nac0nda:~$</span>
-                    <span class="command">cat mission.txt</span>
+                    <span class="command"> cat mission.txt</span>
                 </div>
                 <div class="output">
                     Simulating real-world attacks to uncover vulnerabilities and delivering actionable technical reports. 
@@ -1011,7 +907,7 @@
 
                 <div class="terminal-line">
                     <span class="prompt">root@0x2nac0nda:~$</span>
-                    <span class="command">status</span>
+                    <span class="command"> status</span>
                 </div>
                 <div class="output">
                     <span class="success">[ACTIVE]</span> CTF Player @ Hack The Box | Bug Bounty Hunter | Writer on Medium | Security Researcher
@@ -1081,6 +977,70 @@
                     <span class="service-tag">Hardening</span>
                 </div>
             </div>
+
+            <!-- NEW: Cloud Pentesting -->
+            <div class="service-card">
+                <span class="service-icon">☁️</span>
+                <h3>Cloud Pentesting</h3>
+                <p>Fortify your cloud environments by uncovering misconfigurations and insecure practices. Assessments across AWS, Azure, and GCP for IAM weaknesses, exposed storage, and privilege escalation paths.</p>
+                <div class="service-tags">
+                    <span class="service-tag">AWS</span>
+                    <span class="service-tag">Azure</span>
+                    <span class="service-tag">GCP</span>
+                </div>
+            </div>
+
+            <!-- NEW: AI / LLM Pentesting -->
+            <div class="service-card">
+                <span class="service-icon">🤖</span>
+                <h3>AI / LLM Pentesting</h3>
+                <p>Check your AI / LLM applications for exposures and emerging threat vectors. Testing for prompt injection, data leakage, model manipulation, insecure plugin integrations, and OWASP LLM Top 10 risks.</p>
+                <div class="service-tags">
+                    <span class="service-tag">LLM</span>
+                    <span class="service-tag">Prompt Injection</span>
+                    <span class="service-tag">OWASP AI</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- NEW: Industries Served Section -->
+        <div class="industries-section">
+            <h3 class="industries-title">⬡ Industries Served</h3>
+            <div class="industries-grid">
+                <div class="industry-card">
+                    <span class="industry-icon">🛢️</span>
+                    <div class="industry-name">Oil &amp; Gas</div>
+                </div>
+                <div class="industry-card">
+                    <span class="industry-icon">🛡️</span>
+                    <div class="industry-name">Defense</div>
+                </div>
+                <div class="industry-card">
+                    <span class="industry-icon">🏦</span>
+                    <div class="industry-name">Banking &amp; Finance</div>
+                </div>
+                <div class="industry-card">
+                    <span class="industry-icon">🏥</span>
+                    <div class="industry-name">Healthcare &amp; Insurance</div>
+                </div>
+                <div class="industry-card">
+                    <span class="industry-icon">✈️</span>
+                    <div class="industry-name">Transportation</div>
+                </div>
+                <div class="industry-card">
+                    <span class="industry-icon">🎓</span>
+                    <div class="industry-name">Education</div>
+                </div>
+                <div class="industry-card">
+                    <span class="industry-icon">⚽</span>
+                    <div class="industry-name">Youth &amp; Sports</div>
+                </div>
+                <div class="industry-card">
+                    <span class="industry-icon">🏛️</span>
+                    <div class="industry-name">Government &amp; Private Enterprises</div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1092,34 +1052,31 @@
 
         <div class="timeline">
             <div class="timeline-item">
-                <div class="timeline-date">AUG 2024 - PRESENT</div>
-                <div class="timeline-title">Cyber Security Consultant</div>
-                <div class="timeline-company">Confidential Careers | Riyadh, Saudi Arabia</div>
+                <div class="timeline-date">SEP 2023 - PRESENT</div>
+                <div class="timeline-title">VAPT Consultant</div>
+                <div class="timeline-company">Freelance Security Consultant</div>
                 <div class="timeline-desc">
                     <ul>
-                        <li>Delivered end-to-end penetration testing across web applications, APIs, desktop applications, mobile applications (iOS & Android), network, WiFi, and Active Directory environments.</li>
-                        <li>Conducted internal and external security assessments aligned with industry standards and best practices.</li>
-                        <li>Performed white-box and black-box penetration testing across various environments.</li>
-                        <li>Conducted source code reviews and vulnerability analysis to identify security weaknesses.</li>
-                        <li>Provided security consulting services to software companies and development teams to support secure application design.</li>
-                        <li>Authored detailed technical and executive reports outlining findings, risks, and remediation recommendations for stakeholders.</li>
-                        <li>Conducting internal and external security assessments aligned with NCA and SAMA standards</li>
+                        <li>Delivered comprehensive security assessments for government and financial sector clients across Sudan, Qatar, UAE, and Saudi Arabia.</li>
+                        <li>Provided security consulting services to software companies and independent developers, ensuring secure code and application design.</li>
+                        <li>Performed white-box and black-box penetration testing across different environments.</li>
+                        <li>Conducted internal and external security assessments and source code reviews.</li>
+                        <li>Tested the security of web applications, APIs, and mobile applications (iOS and Android).</li>
+                        <li>Delivered detailed technical reports outlining findings and remediation.</li>
                     </ul>
                 </div>
             </div>
 
             <div class="timeline-item">
-                <div class="timeline-date">SEP 2023 - JUL 2024</div>
-                <div class="timeline-title">Security Consultant</div>
-                <div class="timeline-company">OISSG Consultancy | Doha, Qatar</div>
+                <div class="timeline-date">AUG 2024 - AUG 2025</div>
+                <div class="timeline-title">Cyber Security Consultant</div>
+                <div class="timeline-company">Confidential Careers | Riyadh, Saudi Arabia</div>
                 <div class="timeline-desc">
                     <ul>
-                        <li>Delivered security assessments for government and financial entities.</li>
-                        <li>Performed black-box and gray-box penetration testing engagements.</li>
-                        <li>Conducted internal and external security assessments for enterprise environments.</li>
-                        <li>Tested web applications, APIs, and mobile applications (iOS & Android).</li>
-                        <li>Delivered detailed technical reports with clear remediation recommendations to stakeholders.</li>
-
+                        <li>Delivered end-to-end penetration testing across web applications, APIs, desktop applications, mobile applications (iOS & Android), network, and Active Directory environments.</li>
+                        <li>Conducted internal and external security assessments aligned with industry standards and best practices.</li>
+                        <li>Authored detailed technical and executive reports outlining findings, risks, and remediation recommendations for stakeholders.</li>
+                        <li>Conducted internal and external security assessments aligned with NCA and SAMA standards.</li>
                     </ul>
                 </div>
             </div>
@@ -1208,23 +1165,6 @@
                 <span class="cert-status active">Dante, Zephyr, Rastalabs, Offshore, Cybernetics</span>
             </div>
         </div>
-
-        <div class="training-section">
-            <h3 class="training-title">⌘ Advanced Training & Labs</h3>
-            <div class="training-grid">
-                <div class="training-card">
-                    <div class="training-icon">🏢</div>
-                    <div class="training-name">CRTP</div>
-                    <div class="training-provider">Certified Red Team Professional - Pentester Academy</div>
-                </div>
-
-                <div class="training-card">
-                    <div class="training-icon">🖥️</div>
-                    <div class="training-name">PEN-200 (PWK)</div>
-                    <div class="training-provider">Offensive Security - OSCP Preparation</div>
-                </div>
-            </div>
-        </div>
     </section>
 
     <section id="publications" class="publications-section">
@@ -1275,68 +1215,6 @@
         </div>
     </section>
 
-    <section id="achievements">
-        <div class="section-header">
-            <h2 class="section-title">Trophy_Case</h2>
-            <p class="section-subtitle">Notable achievements and recognitions</p>
-        </div>
-
-        <div class="achievements-grid">
-            <div class="achievement-card">
-                <div class="achievement-icon">🏅</div>
-                <div class="achievement-content">
-                    <h3>57th Place - Black Hat MEA CTF 2022</h3>
-                    <p>Competed against 250+ teams from over 35 countries in the prestigious worldwide competition held in Riyadh, Saudi Arabia.</p>
-                    <span class="achievement-date">November 2022</span>
-                </div>
-            </div>
-
-            <div class="achievement-card">
-                <div class="achievement-icon">🥉</div>
-                <div class="achievement-content">
-                    <h3>Top 3 Bug Bounty Researcher - Sudan</h3>
-                    <p>Ranked 3rd security researcher in Sudan on HackerOne platform for Q1 2022 based on successful vulnerability submissions and bounties.</p>
-                    <span class="achievement-date">Q1 2022</span>
-                </div>
-            </div>
-
-            <div class="achievement-card">
-                <div class="achievement-icon">🥈</div>
-                <div class="achievement-content">
-                    <h3>2nd Place - Sudan National Cybersecurity Competition</h3>
-                    <p>Organized by Trend Micro - demonstrated advanced skills in offensive security challenges.</p>
-                    <span class="achievement-date">2021</span>
-                </div>
-            </div>
-
-            <div class="achievement-card">
-                <div class="achievement-icon">🥉</div>
-                <div class="achievement-content">
-                    <h3>5th Place - Sudan National Cybersecurity Competition</h3>
-                    <p>Organized by Trend Micro - competing against top security professionals in Sudan.</p>
-                    <span class="achievement-date">2020</span>
-                </div>
-            </div>
-
-            <div class="achievement-card">
-                <div class="achievement-icon">📝</div>
-                <div class="achievement-content">
-                    <h3>Published Security Researcher</h3>
-                    <p>Active writer on Medium covering offensive security topics, source code review guides, and OSWE preparation materials.</p>
-                    <span class="achievement-date">Ongoing</span>
-                </div>
-            </div>
-
-            <div class="achievement-card">
-                <div class="achievement-icon">🎓</div>
-                <div class="achievement-content">
-                    <h3>Security Trainer & Mentor</h3>
-                    <p>Developed and delivered specialized training programs for universities and institutions across Sudan, building the next generation of security professionals.</p>
-                    <span class="achievement-date">Ongoing</span>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <section id="contact" class="contact">
         <div class="section-header">
@@ -1370,7 +1248,8 @@
             <div class="footer-logo">0x2nac0nda</div>
             <div class="footer-links">
             </div>
-            <p class="footer-text">© 2026 Abdalla Abdelrhman. All rights reserved. | Securing the digital frontier.</p>
+            <hr class="footer-divider">
+            <p class="footer-copyright">© 2026 <span>Abdalla Abdelrhman</span> — Independent Security Consultant</p>
         </div>
     </footer>
 
@@ -1395,14 +1274,12 @@
         function drawMatrix() {
             ctx.fillStyle = "rgba(0, 0, 0, 0.04)";
             ctx.fillRect(0, 0, canvas.width, canvas.height);
-
             ctx.fillStyle = "#0F0";
             ctx.font = fontSize + "px monospace";
 
             for(let i = 0; i < drops.length; i++) {
                 const text = matrixArray[Math.floor(Math.random() * matrixArray.length)];
                 ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
                 if(drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
                     drops[i] = 0;
                 }
@@ -1430,7 +1307,6 @@
 
         function type() {
             const currentText = texts[textIndex];
-            
             if(isDeleting) {
                 typingElement.textContent = currentText.substring(0, charIndex - 1);
                 charIndex--;
@@ -1438,9 +1314,7 @@
                 typingElement.textContent = currentText.substring(0, charIndex + 1);
                 charIndex++;
             }
-
             let typeSpeed = isDeleting ? 50 : 100;
-
             if(!isDeleting && charIndex === currentText.length) {
                 typeSpeed = 2000;
                 isDeleting = true;
@@ -1449,16 +1323,12 @@
                 textIndex = (textIndex + 1) % texts.length;
                 typeSpeed = 500;
             }
-
             setTimeout(type, typeSpeed);
         }
 
         type();
 
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: "0px 0px -50px 0px"
-        };
+        const observerOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -1468,7 +1338,7 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.service-card, .timeline-item, .cert-card, .achievement-card, .publication-card, .training-card').forEach((el) => {
+        document.querySelectorAll('.service-card, .timeline-item, .cert-card, .achievement-card, .publication-card, .training-card, .industry-card').forEach((el) => {
             el.classList.add('fade-in');
             observer.observe(el);
         });
@@ -1478,10 +1348,7 @@
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if(target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
         });
